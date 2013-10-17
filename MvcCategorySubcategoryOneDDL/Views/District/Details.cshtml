@@ -1,0 +1,33 @@
+﻿@model MvcCategorySubcategoryOneDDL.Models.District
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>District</legend>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.State.StateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.StateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistrictName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistrictName)
+        </dd>
+
+    </dl>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

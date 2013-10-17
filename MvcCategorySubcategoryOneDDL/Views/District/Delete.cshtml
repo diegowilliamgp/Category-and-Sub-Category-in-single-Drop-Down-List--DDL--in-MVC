@@ -1,0 +1,39 @@
+﻿@model MvcCategorySubcategoryOneDDL.Models.District
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>District</legend>
+
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.State.StateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.StateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistrictName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistrictName)
+        </dd>
+
+    </dl>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}

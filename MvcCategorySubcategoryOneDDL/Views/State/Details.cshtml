@@ -1,0 +1,25 @@
+﻿@model MvcCategorySubcategoryOneDDL.Models.State
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>State</legend>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.StateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateName)
+        </dd>
+
+    </dl>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

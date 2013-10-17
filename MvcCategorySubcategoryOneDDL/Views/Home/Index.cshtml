@@ -1,0 +1,50 @@
+﻿@model MvcCategorySubcategoryOneDDL.Models.StateDistrictViewModel
+
+@{
+    ViewBag.Title = "Home Page";  
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>District</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.SelectedStateDistrict, new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("SelectedStateDistrict", ViewBag.StateDistrictList as SelectList, "Select District")
+                @ViewBag.Message
+                @Html.ValidationMessageFor(model => model.SelectedStateDistrict, null, new { @class = "help-inline" })
+            </div>
+        </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<style>
+    .states {
+        color: #00ff21;
+        background-color:#808080;
+    }
+</style>
+<script>
+    $('option').each(function () {
+        var name = $(this).attr("value");
+        if (name == "-1") {
+            $(this).attr("disabled", "true");
+            $(this).addClass("states");
+        }
+    });
+</script>
